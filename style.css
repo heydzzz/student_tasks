@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #4f46e5, #9333ea);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Main Container (Glass Card Effect) */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    text-align: center;
+    color: #fff;
+}
+
+/* Title */
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* Links & Buttons */
+a, button {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+a:hover, button:hover {
+    background: #fff;
+    color: #4f46e5;
+    transform: translateY(-2px);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* Table Header */
+th {
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    padding: 14px;
+    font-weight: 600;
+}
+
+/* Table Cells */
+td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* Hover row effect */
+tr:hover td {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Action Buttons inside table */
+td a {
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+/* Edit Button */
+td a:first-child {
+    background: #22c55e;
+    border: none;
+}
+
+/* Delete Button */
+td a:last-child {
+    background: #ef4444;
+    border: none;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* Inputs */
+input, textarea, select {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+}
+
+/* Placeholder color */
+input::placeholder, textarea::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+/* Focus effect */
+input:focus, textarea:focus, select:focus {
+    background: rgba(255,255,255,0.3);
+    transform: scale(1.02);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    a, button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}

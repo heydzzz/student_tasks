@@ -30,10 +30,11 @@
             <?php
             $result = $conn->query("SELECT * FROM tasks ORDER BY id DESC");
 
-            if ($result->num_rows > 0) {
+            if (!$result) {
+                echo "<tr><td colspan='5'>Error: " . htmlspecialchars($conn->error) . "</td></tr>";
+            } elseif ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
             ?>
-                    <link rel="stylesheet" href="style.css">
                     <tr>
                         <td><?= htmlspecialchars($row['title']) ?></td>
                         <td><?= htmlspecialchars($row['description']) ?></td>

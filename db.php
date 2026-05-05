@@ -1,9 +1,10 @@
 <?php
 // Database Configuration
-$servername = getenv('DB_HOST') ?: 'localhost';
-$username = getenv('DB_USER') ?: 'root';
-$password = getenv('DB_PASS') ?: '';
+$servername = getenv('DB_HOST') ?: 'db';
 $database = getenv('DB_NAME') ?: 'student_tasks';
+$password = getenv('DB_PASS') ?: 'buslot';
+$username = getenv('DB_USER') ?: 'heydz';
+
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
@@ -16,4 +17,3 @@ if ($conn->connect_error) {
 
 // Set charset to utf8
 $conn->set_charset("utf8");
-?>

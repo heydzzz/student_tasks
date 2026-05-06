@@ -1,4 +1,4 @@
-<?php include 'db.php'; ?>
+<?php include 'data.php'; ?>
 <!DOCTYPE html>
 <html>
 
@@ -12,18 +12,10 @@
     <?php
     if (isset($_GET['id'])) {
         $id = intval($_GET['id']);
-        if ($stmt = $conn->prepare("SELECT * FROM tasks WHERE id=?")) {
-            $stmt->bind_param("i", $id);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            $row = $result->fetch_assoc();
+        $row = $db->getById($id);
 
-            if (!$row) {
-                echo "<p>Task not found.</p>";
-                exit;
-            }
-        } else {
-            echo "<p>Error: " . htmlspecialchars($conn->error) . "</p>";
+        if (!$row) {
+            echo "<p>Task not found.</p>";
             exit;
         }
     } else {

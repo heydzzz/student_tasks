@@ -1,4 +1,4 @@
-<?php include 'db.php'; ?>
+<?php include 'data.php'; ?>
 
 <?php
 $id = $_POST['id'];
@@ -7,12 +7,7 @@ $desc = $_POST['description'];
 $date = $_POST['due_date'];
 $status = $_POST['status'];
 
-$conn->query("UPDATE tasks SET
-    title='$title',
-    description='$desc',
-    due_date='$date',
-    status='$status'
-    WHERE id=$id");
+$db->update($id, $title, $desc, $date, $status);
 
 header("Location: index.php");
 ?>

@@ -1,4 +1,4 @@
-<?php include 'db.php'; ?>
+<?php include 'data.php'; ?>
 
 <!DOCTYPE html>
 <html>
@@ -28,12 +28,13 @@
             </tr>
 
             <?php
-            $result = $conn->query("SELECT * FROM tasks ORDER BY id DESC");
+            $tasks = $db->getAll();
+            usort($tasks, function ($a, $b) {
+                return $b['id'] - $a['id'];
+            });
 
-            if (!$result) {
-                echo "<tr><td colspan='5'>Error: " . htmlspecialchars($conn->error) . "</td></tr>";
-            } elseif ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
+            if (count($tasks) > 0) {
+                foreach ($tasks as $row) {
             ?>
                     <tr>
                         <td><?= htmlspecialchars($row['title']) ?></td>

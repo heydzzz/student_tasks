@@ -1,8 +1,8 @@
-<?php include 'db.php'; ?>
+<?php include 'data.php'; ?>
 
 <?php
 $id = $_GET['id'];
-$conn->query("DELETE FROM tasks WHERE id=$id");
+$db->delete($id);
 
 header("Location: index.php");
 ?>

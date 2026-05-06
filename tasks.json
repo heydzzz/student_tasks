@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Study for Math Exam",
+    "description": "Review chapters 5-8 and solve practice problems",
+    "due_date": "2024-06-15",
+    "status": "Pending"
+  },
+  {
+    "id": 2,
+    "title": "Complete Physics Project",
+    "description": "Build a model of the solar system",
+    "due_date": "2024-06-10",
+    "status": "Completed"
+  },
+  {
+    "id": 3,
+    "title": "Read History Chapter",
+    "description": "Read and summarize chapter 12",
+    "due_date": "2024-06-20",
+    "status": "Pending"
+  }
+]

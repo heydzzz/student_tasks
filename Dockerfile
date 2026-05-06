@@ -1,12 +1,8 @@
 FROM php:8.2-apache
 
-# Update and install system dependencies
+# Update system packages
 RUN apt-get update && apt-get install -y \
-    default-mysql-client \
     && rm -rf /var/lib/apt/lists/*
-
-# Install PHP extensions
-RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable mysqli pdo pdo_mysql
 
 # Enable mod_rewrite for PHP Apache
 RUN a2enmod rewrite

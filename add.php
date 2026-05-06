@@ -1,14 +1,13 @@
-<?php include 'db.php'; ?>
+<?php include 'data.php'; ?>
 
 <?php
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $title = $_POST['title'];
     $desc = $_POST['description'];
     $date = $_POST['due_date'];
     $status = $_POST['status'];
 
-    $conn->query("INSERT INTO tasks (title, description, due_date, status)
-                  VALUES ('$title', '$desc', '$date', '$status')");
+    $db->add($title, $desc, $date, $status);
 
     header("Location: index.php");
 }
@@ -16,6 +15,7 @@ if(isset($_POST['submit'])){
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Add Task</title>
 
@@ -25,29 +25,30 @@ if(isset($_POST['submit'])){
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <h2>Add New Task</h2>
+        <h2>Add New Task</h2>
 
-    <form method="POST">
-        <input type="text" name="title" placeholder="Task Title" required>
+        <form method="POST">
+            <input type="text" name="title" placeholder="Task Title" required>
 
-        <textarea name="description" placeholder="Description"></textarea>
+            <textarea name="description" placeholder="Description"></textarea>
 
-        <input type="date" name="due_date">
+            <input type="date" name="due_date">
 
-        <select name="status">
-            <option>Pending</option>
-            <option>Completed</option>
-        </select>
+            <select name="status">
+                <option>Pending</option>
+                <option>Completed</option>
+            </select>
 
-        <button name="submit">Add Task</button>
-    </form>
+            <button name="submit">Add Task</button>
+        </form>
 
-    <br>
-    <a href="index.php">← Back</a>
+        <br>
+        <a href="index.php">← Back</a>
 
-</div>
+    </div>
 
 </body>
+
 </html>

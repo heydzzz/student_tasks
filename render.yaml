@@ -3,8 +3,3 @@ services:
     name: student-tasks
     runtime: docker
     plan: free
-    envVars:
-      - key: DB_HOST
-      - key: DB_USER
-      - key: DB_PASS
-      - key: DB_NAME
